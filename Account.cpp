@@ -24,10 +24,10 @@ std::ostream& operator<< (std::ostream& os, Account &account) {
     if(account.needUpdate) {
       if(!account.depVec.empty()) {
         int counter = 1;
-        os << std:: endl << " ______________________" << std::endl;
+        os << std:: endl << "---------------------" << std::endl;
         os << "Number of Deposits: " << account.depVec.size() << std::endl;
         os << "---------------------------";
-        for(Money i : account.withVec) {
+        for(Money i : account.depVec) {
            os << std::endl << '(' << counter++ << ") " << i;
            account.balance = account.balance + i;
         }
