@@ -41,13 +41,11 @@ bool Money::operator< (const Money& m) {
 }
 
 std::ostream& operator<< (std::ostream& os, const Money& m) {
-    std::ostringstream aggregate;
-    aggregate << "$" << m.cents/100 << '.';
+    os << "$" << m.cents/100 << '.';
     if(m.cents%100 < 10)
-        aggregate << '0' << m.cents%100;
+        os << '0' << m.cents%100;
     else
-        aggregate << m.cents%100;
-    os << aggregate.str();
+        os << m.cents%100;
     return os;
 }
 
