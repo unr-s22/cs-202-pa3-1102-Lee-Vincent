@@ -1,5 +1,5 @@
-test: main.o Money.o Account.o
-	g++ -std=c++11 -o test main.o Money.o Account.o
+pa3: main.o Money.o Account.o
+	g++ -std=c++11 -o pa3 main.o Money.o Account.o
 
 main.o: main.cpp Account.h
 	g++ -std=c++11 -c main.cpp
@@ -11,4 +11,4 @@ Account.o: Account.cpp Account.h Money.h
 	g++ -std=c++11 -c Account.cpp
 
 clean:
-	rm *.o test
+	rm *.o pa3
